@@ -1,7 +1,13 @@
 package com.example.kmp
 
-interface Platform {
-    val name: String
-}
+/**
+ * expect needs actual explanation in Android and ios
+ */
+expect class Platform {
+   val osName : String
+   val osVersion : String
+   val deviceModel : String
+   val density : Int
 
-expect fun getPlatform(): Platform
+   fun logSystemInfo() : String
+}
